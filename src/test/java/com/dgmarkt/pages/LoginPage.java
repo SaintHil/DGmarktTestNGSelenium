@@ -23,7 +23,6 @@ public class LoginPage extends BasePage{
         Assert.assertTrue(actualLogin.contains(expectedLogin));
     }
     public void login(String username,String password){
-        Driver.get().get(ConfigurationReader.get("url"));
         emailBtn.sendKeys(username);
         passwordBtn.sendKeys(password);
         loginBtn.click();
