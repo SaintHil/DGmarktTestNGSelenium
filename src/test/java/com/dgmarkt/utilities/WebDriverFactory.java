@@ -18,11 +18,9 @@ public class WebDriverFactory {
 
         switch (browserType.toLowerCase()){
             case "chrome":
-                WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 break;
             case "firefox":
-                WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
         }

@@ -16,6 +16,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -70,7 +71,7 @@ public class TestBase {
         driver.get(ConfigurationReader.get("url"));
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         actions = new Actions(driver);
-        wait = new WebDriverWait(Driver.get(), 15);
+        wait = new WebDriverWait(Driver.get(), Duration.ofSeconds(15));
 
     }
 
