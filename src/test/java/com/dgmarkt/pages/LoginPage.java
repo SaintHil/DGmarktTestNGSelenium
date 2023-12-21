@@ -24,10 +24,10 @@ public class LoginPage extends BasePage{
         String actualLogin=loginVerify.getText();
         Assert.assertTrue(actualLogin.contains(expectedLogin));
     }
-    public void login(String username,String password){
+    public void login(){
         login_Icon.click();
-        emailBtn.sendKeys(username);
-        passwordBtn.sendKeys(password);
+        emailBtn.sendKeys(ConfigurationReader.get("username"));
+        passwordBtn.sendKeys(ConfigurationReader.get("password"));
         loginBtn.click();
     }
     public void login1(){
