@@ -30,11 +30,4 @@ public class LoginPage extends BasePage{
         passwordBtn.sendKeys(ConfigurationReader.get("password"));
         loginBtn.click();
     }
-    public void login1(){
-        login_Icon.click();
-        emailBtn.sendKeys(ConfigurationReader.get("username"));
-        passwordBtn.sendKeys(ConfigurationReader.get("password"));
-        loginBtn.click();
-    }
-
 }

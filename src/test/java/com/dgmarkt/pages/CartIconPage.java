@@ -7,22 +7,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class CartIconPage extends BasePage {
     @FindBy(xpath = "(//a[contains(text(),'Books')])[1]")
     public WebElement Books_btn;
+    @FindBy(css = "[value='Add to cart']")
+    public List<WebElement> addToCart_List;
     @FindBy(xpath = "(//input[@type='button'])[3]")
     public WebElement addToCart1_btn;
-    @FindBy(xpath = "(//input[@type='button'])[4]")
-    public WebElement addToCart2_btn;
-
     @FindBy(xpath = "//span[text()='Shopping cart']")
     public WebElement shoppingCartLink;
+    @FindBy(css = "[class='product-title']")
+    public List<WebElement> product_List;
     @FindBy(xpath = "(//a[text()='Computing and Internet'])[1]")
     public WebElement computingAndInternet;
-    @FindBy(xpath = "(//a[text()='Computing and Internet'])[2]")
-    public WebElement cartComputingAndInternet;
-    @FindBy(xpath = "(//a[text()='Fiction'])[1]")
-    public WebElement fiction;
     @FindBy(xpath = "//input[@type='button']")
     public WebElement goToCart_btn;
     @FindBy(xpath = "//input[@type='checkbox']")
@@ -39,17 +38,8 @@ public class CartIconPage extends BasePage {
     public WebElement checkout_btn;
     @FindBy(xpath = "(//input[@type='button'])[2]")
     public WebElement continue_btn1;
-    @FindBy(xpath = "(//input[@type='button'])[3]")
-    public WebElement continue_btn2;
-    @FindBy(xpath = "(//input[@type='button'])[4]")
-    public WebElement continue_btn3;
-    @FindBy(xpath = "(//input[@type='button'])[5]")
-    public WebElement continue_btn4;
-    @FindBy(xpath = "(//input[@type='button'])[6]")
-    public WebElement continue_btn5;
-    @FindBy(xpath = "(//input[@type='button'])[7]")
-    public WebElement continue_btn6;
-
+    @FindBy(xpath = "//input[@type='button']")
+    public List<WebElement> continue_List;
 
     @FindBy(xpath = "//div[@class='title']")
     public WebElement successfully_processed;
@@ -57,17 +47,9 @@ public class CartIconPage extends BasePage {
     public void checkout_mtd(){
         termofservice.click();
         checkout_btn.click();
-        for (int i = 2; i <8 ; i++) {
-             Driver.get().findElement(By.xpath("(//input[@type='button'])['"+i+"']")).click();
-            BrowserUtils.waitFor(1);
+        for (int i = 1; i <continue_List.size() ; i++) {
+            continue_List.get(i).click();
         }
-      /*  continue_btn1.click();
-        continue_btn2.click();
-        continue_btn3.click();
-        continue_btn4.click();
-        continue_btn5.click();
-        continue_btn6.click();*/
         Assert.assertTrue(successfully_processed.isDisplayed());
     }
-
 }
