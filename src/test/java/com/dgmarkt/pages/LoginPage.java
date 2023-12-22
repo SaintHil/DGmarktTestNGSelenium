@@ -30,5 +30,4 @@ public class LoginPage extends BasePage{
         passwordBtn.sendKeys(ConfigurationReader.get("password"));
         loginBtn.click();
     }
-
 }
