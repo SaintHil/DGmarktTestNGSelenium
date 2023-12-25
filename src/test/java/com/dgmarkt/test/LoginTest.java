@@ -15,6 +15,8 @@ public class LoginTest extends TestBase{
         driver.get(ConfigurationReader.get("url"));
         extentLogger.info("Login with valid credentials");
         loginPage.login();
+        extentLogger.info("Verify that login is successful message");
+        loginPage.loginVerifyMethod();
         extentLogger.pass("Passed");
     }
 }
