@@ -10,6 +10,7 @@ public class SearchIconTest extends TestBase{
     LoginPage loginPage=new LoginPage();
     SearchIconPage searchIconPage=new SearchIconPage();
 
+
     @Test
     public void searchBoxPositiveVerify(){
         extentLogger = report.createTest("Search Icon Function Test");

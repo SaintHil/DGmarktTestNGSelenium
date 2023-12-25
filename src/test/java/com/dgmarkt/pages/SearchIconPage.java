@@ -9,8 +9,7 @@ public class SearchIconPage extends BasePage{
     public WebElement searchIconBox;
     @FindBy(xpath = "(//input[@type='submit'])[1]")
     public WebElement searchBtn;
-//    @FindBy(className = "button-1")
-//    public WebElement searchBtn1;
+
     @FindBy(xpath = "//h1[text()='Search']")
     public WebElement searchVerifyText;
     @FindBy(xpath = "//strong[@class='result']")
