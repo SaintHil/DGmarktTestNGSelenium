@@ -51,10 +51,10 @@ public class TestBase {
         htmlReporter.config().setReportName("Audit DevBook Test");
 
         //set environment information
-        report.setSystemInfo("Environment", "DevBook Production");
+        report.setSystemInfo("Environment", "DemoShop Production");
         report.setSystemInfo("Browser", ConfigurationReader.get("browser"));
         report.setSystemInfo("OS", System.getProperty("os.name"));
-        report.setSystemInfo("Test Engineer", "FT");
+        report.setSystemInfo("Test Engineer", "ocolak");
     }
 
     @AfterTest
